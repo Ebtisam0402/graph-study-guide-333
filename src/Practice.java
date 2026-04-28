@@ -98,6 +98,10 @@ public class Practice {
    * @param graph a map representing the graph
    * @param starting the starting vertex value
    * @return a sorted list of all reachable vertex values
+   * if visited → stop  
+   * mark visited  
+   * add to result  
+   * go to neighbors  
    */
   public static List<Integer> sortedReachable(Map<Integer, Set<Integer>> graph, int starting) {
     List<Integer> values = new ArrayList<>();
@@ -121,6 +125,7 @@ public class Practice {
     for(Integer neighbor: graph.get(current)) {
       sortedReachable(graph, neighbor, visited, values);
     }
+
   }
 
   /**
